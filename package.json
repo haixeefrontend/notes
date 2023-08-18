@@ -1,0 +1,16 @@
+{
+  "name": "@haixeefrontend/notes",
+  "version": "0.0.0",
+  "description": "Notes for front-end development",
+  "main": "index.js",
+  "repository": "https://github.com/haixeefrontend/notes.git",
+  "author": "Maiko Tan <maiko.tan.coding@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "private": true,
+  "scripts": {
+    "toc": "doctoc --title '## Table of Contents' --github --maxlevel 3 ."
+  },
+  "devDependencies": {
+    "doctoc": "^2.2.1"
+  }
+}
