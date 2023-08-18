@@ -101,6 +101,24 @@ To achieve this, we should use `vue-tsc` to generate the type definitions files 
 }
 ```
 
+> Note: You should make sure that `*.vue` files are listed in the `include` field in the `tsconfig.json` file.
+
+Then we can use the `types` field in the `package.json` file to point to the generated type definitions files:
+
+```json
+{
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./src/index.js"
+    }
+  }
+}
+```
+
+> Note: `types` in `exports` should always be before `import` or `require` so that TypeScript can find the type definitions. [Reference](https://www.typescriptlang.org/docs/handbook/esm-node.html#packagejson-exports-imports-and-self-referencing)
+
 You might found that some of the types are resulted to `any` or `unknown` since we are using JS only. In this case, we can declare the types with JSDoc comments.
 
 #### Component Props
